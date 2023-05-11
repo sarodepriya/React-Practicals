@@ -1,0 +1,14 @@
+{
+  "name": "11-redux",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "author": "Makarand Bhoir",
+  "license": "ISC",
+  "dependencies": {
+    "redux": "^4.1.0"
+  }
+}

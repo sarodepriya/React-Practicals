@@ -1,0 +1,26 @@
+KUSH-
+
+1. letvsvar
+2. forEach
+
+PRIYANSHU-
+
+3. map
+4. filter
+
+KETAN-
+
+5. find
+6. reduce
+
+SURAJ-
+
+7. arrow
+8. arrowline
+9. class
+
+MANISHA-
+
+10. spread
+11. rest
+
