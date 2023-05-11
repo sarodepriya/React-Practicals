@@ -1,0 +1,103 @@
+import EmployeeService from '../service/EmployeeService'
+import Department from "../model/Department";
+import Employee from "../model/Employee";
+
+test('Testing find all employee by funciton.', async () => {
+    let service = new EmployeeService();
+    //let emp = new Employee();
+    await service.getAllEmployees().then(() => {
+        //emp = result.data;
+        service.findEmployeeById(21).then((result) => {
+            let employee = result.data;
+            expect(employee.department.departmentId).toEqual(204);
+        });
+        //console.log(result.data);
+        //console.log(emp);
+        
+       //expect(emp.employeeId).toEqual(21);
+       //expect('Hello').toEqual('Hello');
+    });
+})
+
+
+test('Testing find employee by id using service.', async () => {
+    let service = new EmployeeService();
+    let emp = new Employee();
+    let employeeId=21;
+    await service.findEmployeeById(employeeId).then((result) => {
+        emp = result.data;
+        //console.log(result.data);
+        //console.log(emp); --CG EVAL Query-arrange properly??---jasmine testing ??? toBe--ToExpect
+    
+       expect(emp.employeeId).toEqual(21);
+       //expect('Hello').toEqual('Hello');
+    });
+})
+
+test('Testing Add employee funciton.', async () => {
+    let service = new EmployeeService();
+    let dept=new Department();
+
+    dept.departmentId=204;
+    dept.departmentName="IT";
+     let emp=new Employee();
+     emp.employeeId=22;
+     emp.employeeName="Harsh Puri";
+     emp.employeeSalary=10000.00;
+     emp.department=dept;
+    //console.log("inside test "+JSON.stringify(emp))
+    await service.addEmployee((emp)).then((result) => {     
+        let employee = result.data;   
+        //expect('Hello').toEqual('Hello');
+        expect(employee).toBe('Employee with id 22 is added.');
+    
+    });
+  
+ })
+
+ test('Testing delete employee by id using service.', async () => {
+    let service = new EmployeeService();
+    let emp = new Employee();
+    let employeeId=22;
+    await service.deleteEmployeeById(employeeId).then((result) => {
+        emp = result.data;
+        //console.log(result.data);
+        console.log(emp);
+        //expect(emp_find.employeeId).toEqual(null);
+        expect(emp.employeeName).toBe('Harsh Puri');
+    });
+})
+
+
+test('Testing Update employee by id funciton.', async () => {
+    let dept=new Department();
+    dept.departmentId=201;
+    dept.departmentName="Marketing";
+    let emp=new Employee();
+    emp.employeeId=23;
+    emp.employeeName="Rupali M.";
+    emp.employeeSalary=400000;
+    emp.department=dept;
+    let service = new EmployeeService();
+    await service.updateEmployee(emp).then((result) => {
+         service.findEmployeeById(23).then((result) => {
+            let employee = result.data;
+        
+            expect(employee.employeeName).toBe('Rupali M.');
+        });
+    });
+})
+/* The Jest API focusses more on the ability to define tests, make assertions, and create mocks.
+
+describe: defines a test suite.
+it: defines a test.
+beforeEach: defines an entry hook before running each test.
+expect: makes an assertion.
+jest.fn(): creates a mock function.
+Several methods are available for assertions.
+
+toEqual: checks if two objects have the same value.
+toBe: checks if two objects have the same value and type.
+toBeDefined: checks if the object is defined.
+toContain: checks if an item is present in a list.
+toBeCalled: checks if a mock function is called.*/

@@ -1,0 +1,39 @@
+//delete Employee Action
+// export const deleteEmployeeRequest = (empId) => { 
+//   //alert("DeleteEmployeeRequest called :  taking type and palyload of action");
+//    return {
+//      type: DELETE_EMPLOYEE_REQUEST,
+//      payload: empId
+//    }; 
+//  };
+//  export const deleteEmployee = (empId) => {
+//   //alert("Delete Employee action called");
+//   return (dispatch) => {
+//     let service = new EmployeeService();
+//     service.deleteEmployeeById(empId).then((response) => {
+//       const e = response.data;
+//       dispatch(deleteEmployeeRequest(empId));//take action as parameter,reudcer is triggered
+      
+//       service.getAllEmployees().then((response) => {
+//                const employees = response.data;
+//                alert("Get all employees from delete emp");
+//                dispatch(fetchEmployeesSuccess(employees));//take action as parameter,reudcer is triggered
+
+
+
+//     })
+//       .catch((error) => {
+//        // dispatch(fetchEmployeesFailure(error.message));
+//       });
+//     })
+//   };
+// };
+
+// export const deleteEmployeeRequest = (emp) => { 
+//   //alert("UpdateEmployeeRequest called : taking type and palyload of action");
+//    return {
+//      type: DELETE_EMPLOYEE_REQUEST,
+//      payload: emp, //data from database
+//    }; 
+//  };
+

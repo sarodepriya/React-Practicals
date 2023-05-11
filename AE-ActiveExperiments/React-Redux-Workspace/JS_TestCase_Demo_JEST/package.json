@@ -1,0 +1,15 @@
+{
+  "name": "js_testcase_demo_jest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Subtract.js",
+  "scripts": {
+    "test": "jest --watchAll"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
+}

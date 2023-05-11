@@ -1,0 +1,12 @@
+This project is only React-Student-CRUD Application.
+
+
+Important js files are : App.js, index.js, model/Student.js, model/Address.js
+                      component/Header.js----> In this functional component AddStudent component is called by using Link.
+                      component/AddStudent.js ----> This class component added the student data by using service and navigate to StudentList component.
+                      component/StudentList.js ----> This class component displays the all student data from database.
+                      NewComponents/UpdateStudentNew.js ----> This is functional component designed using React hooks and it updates the student data by fetching the id from the path
+
+For Backend : Please refer following Spring-Boot-REST API Project
+Backend Project Name : SpringRestStudentBackend_ReactApp
+Path : D:\JAVA-FULL-STACK\Topic-Wise-Contents\React\AD-ActiveDevelopment\SpringRestStudentBackend_ReactApp
